@@ -8,8 +8,8 @@ import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
 import { Footer } from 'components/core';
 
 import * as PAGES from 'pages';
-// import { useRootStore } from 'stores/initStore';
 
+// import { useRootStore } from 'stores/initStore';
 import * as C from './const';
 import * as S from './units';
 

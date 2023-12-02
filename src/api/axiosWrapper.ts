@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 import { config } from 'config';
-// import { notification } from 'utils';
 
+// import { notification } from 'utils';
 import Api from './Api';
 import * as C from './const';
 
@@ -77,7 +77,7 @@ instanceOfAxios.interceptors.response.use(
                 break;
 
             case 422:
-                // notifyErrors(error.response?.data?.errors);
+            // notifyErrors(error.response?.data?.errors);
 
             case 429:
                 error.errorText = C.ERROR_429;

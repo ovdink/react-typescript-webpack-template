@@ -1,7 +1,7 @@
 import React, { createContext, FC, ReactNode } from 'react';
 import { useLocalObservable } from 'mobx-react';
 
-import { TestStore, ITestStore } from './TestStore';
+import { ITestStore, TestStore } from './TestStore';
 
 interface IStoreContext {
     testStore: ITestStore;
