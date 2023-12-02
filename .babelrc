@@ -1,0 +1,14 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "corejs": "3.8",
+                "useBuiltIns": "usage"
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ],
+    "plugins": ["@emotion", "@babel/plugin-proposal-class-properties"]
+}

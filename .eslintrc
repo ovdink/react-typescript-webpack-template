@@ -1,0 +1,109 @@
+{
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["@typescript-eslint", "react", "import", "simple-import-sort"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    ["pages", "./src/pages"],
+                    ["hooks", "./src/hooks"],
+                    ["const", "./src/const"],
+                    ["store", "./src/store"],
+                    ["styles", "./src/styles"],
+                    ["router", "./src/router"],
+                    ["utils", "./src/utils"],
+                    ["api", "./src/api"],
+                    ["components", "./src/components"],
+                    ["widgets", "./src/widgets"],
+                    ["config", "./src/config"],
+                    ["utils", "./src/utils"]
+                ],
+                "extensions": [".ts", ".tsx", ".json"]
+            }
+        }
+    },
+    "rules": {
+        "react/display-name": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "space-before-function-paren": 0,
+        // "indent": ["error", 4, { "SwitchCase": 1 }],
+        "spaced-comment": ["error", "always"],
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-empty-interface": [
+            "error",
+            {
+                "allowSingleExtends": true
+            }
+        ],
+        "camelcase": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+    },
+    "overrides": [
+        // override "simple-import-sort" config
+        {
+            "files": ["*.ts", "*.tsx"],
+            "rules": {
+                "simple-import-sort/imports": [
+                    "error",
+                    {
+                        "groups": [
+                            // Packages `react` related packages come first.
+                            ["^react", "^@?\\w"],
+                            // Internal packages.
+                            ["^(components)(/.*|$)"],
+                            [
+                                "^(components|utils|pages|hooks|const|store|stores|styles|router|api|widgets|config|interfaces|services)(/.*|$)"
+                            ],
+                            // Side effect imports.
+                            ["^\\u0000"],
+                            // Parent imports. Put `..` last.
+                            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                            // svg group
+                            ["^.+\\.?(svg|png)$"],
+                            // Other relative imports. Put same-folder imports and `.` last.
+                            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                            // Style imports.
+                            ["^.+\\.?(css)$"]
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

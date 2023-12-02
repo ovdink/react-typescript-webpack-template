@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/public/fonts/Gilroy-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/public/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+
+    transition: background-color 0.15s ease-in-out;
+    font-family: 'Inter', sans-serif !important;
+
+    scrollbar-color: #d1e4f6 white;
+    scrollbar-width: thin;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    background-color: #000;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+    font-synthesis: none;
+    -moz-font-feature-settings: 'kern';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    line-height: 140%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    line-height: 140%;
+    transition: color 0.15s ease-in-out;
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+label {
+    display: inline-block;
+}
+
+select {
+    word-wrap: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+span {
+    line-height: normal;
+}
+
+input {
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    box-sizing: border-box;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    padding: 0;
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+    -webkit-appearance: listbox;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+
+    transition: all 0s linear !important;
+}
+
+button {
+    border: none;
+    background: transparent;
+
+    margin: 0px;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize line-height. Cannot be changed from normal in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable input types in iOS */
+    -webkit-appearance: none;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+button:not(:disabled),
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled) {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+[contenteditable] {
+    outline: none;
+}
+
+a {
+    all: unset;
+
+    transition: color 0.15s ease-in-out;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b1bacd;
+    border-radius: 3px;
+}
+
+/* skeleton animation */
+@keyframes skeletonPulse {
+    0% {
+        background-color: rgba(115, 143, 172, 0.07);
+    }
+    50% {
+        background-color: rgba(115, 143, 172, 0.24);
+    }
+    100% {
+        background-color: rgba(115, 143, 172, 0.07);
+    }
+}
+
+/* notification styles */
+.Toastify__toast-container {
+    top: 70px !important;
+
+    width: 100% !important;
+    max-width: 400px !important;
+
+    @media only screen and (max-width: 480px) {
+        max-width: 100% !important;
+    }
+}
+
+.Toastify__toast {
+    position: relative !important;
+
+    padding: 24px 40px 24px 16px !important;
+
+    background-color: rgba(115, 143, 172, 0.07) !important;
+
+    border: 1px solid rgba(115, 143, 172, 0.1) !important;
+    border-radius: 16px !important;
+
+    box-shadow: inset 0px 0px 54px rgba(255, 255, 255, 0.04) !important;
+
+    backdrop-filter: blur(30px) !important;
+
+    @media only screen and (max-width: 480px) {
+        margin-bottom: 12px !important;
+
+        border-radius: 0 !important;
+    }
+}
+
+.Toastify__toast-body {
+    align-items: flex-start !important;
+
+    padding: 0% !important;
+}
+
+.Toastify__toast-icon {
+    width: 24px !important;
+}
+
+/* .Toastify__toast--success {
+    box-shadow: inset 0px 0px 54px rgba(255, 255, 255, 0.04);
+}
+
+.Toastify__toast--error {
+    box-shadow: inset 0px 0px 54px rgba(255, 255, 255, 0.04);
+}
+
+.Toastify__toast--warning {
+    box-shadow: inset 0px 0px 54px rgba(255, 255, 255, 0.04);
+} */
