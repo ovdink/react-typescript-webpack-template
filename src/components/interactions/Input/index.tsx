@@ -1,4 +1,4 @@
-import React, { FocusEvent, forwardRef, RefObject, useRef, useState } from 'react';
+import { FocusEvent, forwardRef, RefObject, useRef, useState } from 'react';
 
 import { Expand } from 'components/other';
 

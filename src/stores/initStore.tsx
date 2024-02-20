@@ -1,4 +1,4 @@
-import React, { createContext, FC, ReactNode } from 'react';
+import { createContext, FC, ReactNode, useContext } from 'react';
 import { useLocalObservable } from 'mobx-react';
 
 import { ITestStore, TestStore } from './TestStore';
@@ -20,7 +20,7 @@ export const StoreProvider: FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 export const useRootStore = () => {
-    const rootStore = React.useContext(StoreContext);
+    const rootStore = useContext(StoreContext);
 
     if (!rootStore) {
         throw new Error('useStore must be used within a StoreProvider');

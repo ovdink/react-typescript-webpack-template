@@ -2,7 +2,7 @@
     "compilerOptions": {
         "outDir": "./build/",
         "sourceMap": false,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "noImplicitAny": true,
         "noImplicitThis": true,
         "resolveJsonModule": true,

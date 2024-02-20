@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { default as SkeletonLib, SkeletonTheme } from 'react-loading-skeleton';
 
 import * as T from './types';

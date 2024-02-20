@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent, MutableRefObject, useRef } from 'react';
+import { FC, MouseEvent, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { useBlockBodyScroll } from 'hooks';

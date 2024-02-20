@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { observer } from 'mobx-react';
 
 import { Loader } from 'components/core';

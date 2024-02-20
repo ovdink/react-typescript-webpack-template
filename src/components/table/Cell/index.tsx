@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 // import { Hint } from 'components/other';
 import { ReactComponent as DefaultSortSvg } from './images/default-sort.svg';
