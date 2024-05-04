@@ -16,7 +16,8 @@ module.exports = {
     output: {
         publicPath: '/',
         path: path.join(process.env.PWD, 'build'),
-        filename: '[name].js',
+        filename: 'js/[name].js', // Define the 'js' subfolder for the main files
+        chunkFilename: 'js/[name].chunk.js', // Define the 'js' subfolder for the chunks
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -52,15 +53,11 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                issuer: {
-                    and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-                },
                 use: [
                     {
                         loader: '@svgr/webpack',
                         options: {
-                            svgo: false,
-                            ref: true,
+                            icon: true,
                         },
                     },
                     {
@@ -68,7 +65,6 @@ module.exports = {
                     },
                 ],
             },
-
             // {
             //     test: /\.woff(2)?(\?.*)?$/,
             //     loader: 'url-loader',
@@ -96,7 +92,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.join(process.env.PWD, 'public', 'index.html'),
-            // favicon: path.join(process.env.PWD, 'public', 'favicon.png'),
+            // favicon: path.join(process.env.PWD, 'public', 'favicon.svg'),
             minify: {
                 collapseWhitespace: isProd,
                 removeComments: isProd,
