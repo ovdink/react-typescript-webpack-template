@@ -126,7 +126,7 @@ const outlineCircleButtonStyle = css`
 `;
 
 export const CircleButton = styled(ButtonBase)<T.ICircleButton>`
-    ${({ styleScheme, theme }) =>
+    ${({ styleScheme }) =>
         styleScheme === 'outline' &&
         css`
             color: blue;
