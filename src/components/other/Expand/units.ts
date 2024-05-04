@@ -48,6 +48,8 @@ export const expandWidth = (
 };
 
 export const ExpandWrapper = styled.div<T.IExpandWrapper>`
+    width: ${({ isHorizontal, isOpen, width, isAutoWidth, isHidden, isAutoHeightClose = false }) =>
+        expandWidth(isHorizontal, isOpen, width, isAutoWidth, isHidden, isAutoHeightClose)};
     height: ${({
         height,
         isOpen,
@@ -59,14 +61,11 @@ export const ExpandWrapper = styled.div<T.IExpandWrapper>`
 
     height: ${({ isHorizontal }) => isHorizontal && '100%'};
 
-    width: ${({ isHorizontal, isOpen, width, isAutoWidth, isHidden, isAutoHeightClose = false }) =>
-        expandWidth(isHorizontal, isOpen, width, isAutoWidth, isHidden, isAutoHeightClose)};
-
-    overflow: ${({ isHidden }) => isHidden && 'hidden'};
+    transition: all ${({ transition }) => `${transition}s`} ease-in-out;
 
     cursor: ${({ isClickable }) => isClickable && 'pointer'};
 
-    transition: all ${({ transition }) => `${transition}s`} ease-in-out;
+    overflow: ${({ isHidden }) => isHidden && 'hidden'};
 `;
 
 export const ChildrenContainer = styled.div<{
@@ -80,8 +79,8 @@ export const ChildrenContainer = styled.div<{
     ${({ display, justifyContent = 'flex-start', alignItems = 'stretch' }) =>
         display === 'flex' &&
         css`
-            justify-content: ${justifyContent};
             align-items: ${alignItems};
+            justify-content: ${justifyContent};
         `}
 
     width: ${({ isHorizontal }) => isHorizontal && 'max-content'};

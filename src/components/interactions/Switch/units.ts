@@ -14,14 +14,14 @@ export const SwitchWrapper = styled.div<{
     height: ${({ type }) => (type === 'small' ? '20px' : '24px')};
     padding: 1px;
 
-    border-radius: 104px;
+    background-color: ${({ withActiveBackground, isActive }) =>
+        withActiveBackground && isActive ? theme.colors.green : theme.colors.box24};
 
-    cursor: pointer;
+    border-radius: 104px;
 
     transition: background-color 0.4s ease-in-out;
 
-    background-color: ${({ withActiveBackground, isActive }) =>
-        withActiveBackground && isActive ? theme.colors.green : theme.colors.box24};
+    cursor: pointer;
 `;
 
 export const Switch = styled.div<{ isActive: boolean; type?: 'small' | 'normal' }>`
@@ -32,14 +32,14 @@ export const Switch = styled.div<{ isActive: boolean; type?: 'small' | 'normal' 
             ? `calc(100% - ${type === 'small' ? '10px' : '12px'})`
             : `${type === 'small' ? '10px' : '12px'}`};
 
-    transform: translate(-50%, -50%);
-
     width: 22px;
     height: 22px;
 
     border-radius: 50%;
 
     transition: left 0.4s ease-in-out;
+
+    transform: translate(-50%, -50%);
 
     ${({ type }) =>
         type === 'small' &&

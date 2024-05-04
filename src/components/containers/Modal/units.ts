@@ -9,25 +9,24 @@ import { ICrossPosition, IModalOverlayProps } from './types';
 
 export const ModalOverlay = styled.div<IModalOverlayProps>`
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background-color: rgba(7, 11, 15, 0.7);
+    background-color: rgb(7 11 15 / 70%);
+
+    visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+    opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
 
     transition: all ${({ isVisible }) => (isVisible ? '0.15s' : '0s')} ease-in-out;
-    opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
-    visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+
+    cursor: pointer;
+
     overflow: hidden;
 
     z-index: ${({ isHide }) => (isHide ? theme.zIndex.dropdown : theme.zIndex.modal)};
-
-    cursor: pointer;
 
     ${toEnd('mobile')} {
         padding-left: 0;
@@ -43,11 +42,11 @@ export const ModalPaper = styled(Paper)<IModalOverlayProps>`
 
     background-color: gray;
 
-    overflow: hidden auto;
-
     border-right: 2px solid gray;
 
     cursor: default;
+
+    overflow: hidden auto;
 
     &::-webkit-scrollbar {
         width: 4px;
@@ -66,12 +65,12 @@ export const ModalPaper = styled(Paper)<IModalOverlayProps>`
         max-height: 100%;
         padding: ${({ withTitle }) => (withTitle ? '0 24px 24px' : '16px 24px 24px')};
 
+        border-right: 0;
+
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
 
         transition: bottom 0.4s ease-in-out;
-
-        border-right: 0;
 
         &::-webkit-scrollbar-track {
             margin-bottom: 83px;
@@ -89,11 +88,11 @@ export const TitleWrapper = styled.div`
     width: calc(100% + 48px);
     padding: 24px 24px 16px;
 
-    transform: translateX(-24px);
-
     background-color: black;
 
     z-index: ${theme.zIndex.menu};
+
+    transform: translateX(-24px);
 `;
 
 export const CrossStyled = styled(Cross)<{ position?: ICrossPosition }>`

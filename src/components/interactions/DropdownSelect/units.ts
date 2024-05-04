@@ -23,11 +23,11 @@ export const ValueWrapper = styled.div<{ isOpen: boolean; size?: 'normal' | 'lar
     border: 1px solid ${({ isOpen }) => (isOpen ? theme.colors.box24 : 'transparent')};
     border-radius: ${({ isOpen }) => (isOpen ? '8px 8px 0 0' : theme.borderRadiusSecondary)};
 
-    user-select: none;
+    transition: all 0.15s ease-in-out;
 
     cursor: pointer;
 
-    transition: all 0.15s ease-in-out;
+    user-select: none;
 
     @media (hover: hover) {
         &:hover {
@@ -39,12 +39,13 @@ export const ValueWrapper = styled.div<{ isOpen: boolean; size?: 'normal' | 'lar
 export const Value = styled.p`
     min-width: 70px;
 
-    font-weight: ${theme.text.small.fontWeight};
     font-size: ${theme.text.small.fontSize};
 
-    color: black;
+    font-weight: ${theme.text.small.fontWeight};
 
     white-space: nowrap;
+
+    color: black;
 `;
 
 export const ArrowIcon = styled(ArrowSVG)<{ isopen: string }>`
@@ -94,18 +95,19 @@ export const Item = styled.div<{ isActive: boolean }>`
 
     padding: 10px 16px;
 
-    font-weight: ${theme.text.small.fontWeight};
     font-size: ${theme.text.small.fontSize};
+
+    font-weight: ${theme.text.small.fontWeight};
 
     color: ${(props) => (props.isActive ? 'white' : 'black')};
 
     background-color: ${({ isActive }) => (isActive ? theme.colors.primary : 'transparent')};
 
-    user-select: none;
+    transition: all 0.15s ease-in-out;
 
     cursor: pointer;
 
-    transition: all 0.15s ease-in-out;
+    user-select: none;
 
     @media (hover: hover) {
         &:hover {

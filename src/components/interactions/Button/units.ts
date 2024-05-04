@@ -7,16 +7,18 @@ import * as T from './types';
 
 const ButtonBase = styled.button<T.IButton>`
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    font-weight: ${theme.text.small.fontWeight};
-    font-size: ${theme.text.small.fontSize};
-    white-space: nowrap;
+    width: 100%;
 
     height: ${({ size }) => (size === 'small' ? '40px' : '48px')};
-    width: 100%;
     padding: 0 24px;
+
+    font-size: ${theme.text.small.fontSize};
+
+    font-weight: ${theme.text.small.fontWeight};
+    white-space: nowrap;
 
     border: none;
     border-radius: ${theme.borderRadiusSecondary};
@@ -39,6 +41,12 @@ const primaryButtonStyle = css`
 
     background-color: ${theme.colors.primary};
 
+    &:disabled {
+        color: ${theme.colors.gray};
+
+        background-color: ${theme.colors.primaryDisabled};
+    }
+
     @media (hover: hover) {
         &:not(:disabled):hover {
             background-color: ${theme.colors.primaryHover};
@@ -47,12 +55,6 @@ const primaryButtonStyle = css`
                 fill: ${theme.colors.white};
             }
         }
-    }
-
-    &:disabled {
-        color: ${theme.colors.gray};
-
-        background-color: ${theme.colors.primaryDisabled};
     }
 `;
 
@@ -63,6 +65,10 @@ const transparentButtonStyle = css`
 
     border-radius: 24px;
 
+    &:disabled {
+        color: ${theme.colors.gray};
+    }
+
     @media (hover: hover) {
         &:not(:disabled):hover {
             background-color: ${theme.colors.box13};
@@ -71,10 +77,6 @@ const transparentButtonStyle = css`
                 fill: ${theme.colors.white};
             }
         }
-    }
-
-    &:disabled {
-        color: ${theme.colors.gray};
     }
 `;
 
@@ -93,8 +95,9 @@ export const Icon = styled.div`
     display: flex;
     align-items: center;
 
-    height: 100%;
     max-width: 30px;
+
+    height: 100%;
     max-height: 30px;
     margin-right: 8px;
 `;
@@ -103,6 +106,12 @@ const outlineCircleButtonStyle = css`
     background-color: transparent;
 
     border: 2px solid ${theme.colors.primary};
+
+    &:disabled {
+        color: ${theme.colors.gray};
+
+        border-color: ${theme.colors.gray};
+    }
 
     @media (hover: hover) {
         &:not(:disabled):hover {
@@ -117,12 +126,6 @@ const outlineCircleButtonStyle = css`
             }
         }
     }
-
-    &:disabled {
-        color: ${theme.colors.gray};
-
-        border-color: ${theme.colors.gray};
-    }
 `;
 
 export const CircleButton = styled(ButtonBase)<T.ICircleButton>`
@@ -131,7 +134,6 @@ export const CircleButton = styled(ButtonBase)<T.ICircleButton>`
         css`
             color: blue;
         `}
-
     width: max-content;
 
     border-radius: 64px;

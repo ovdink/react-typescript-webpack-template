@@ -7,8 +7,9 @@ import { theme } from 'styles';
 const commonStyle = css`
     position: relative;
 
-    font-weight: ${theme.text.small.fontWeight};
     font-size: ${theme.text.tiny.fontSize};
+
+    font-weight: ${theme.text.small.fontWeight};
 
     color: ${theme.colors.primary};
 

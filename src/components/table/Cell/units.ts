@@ -9,7 +9,7 @@ import { ReactComponent as DescSortSvg } from './images/desc-sort.svg';
 import * as T from './types';
 
 const commonStyle = css`
-    padding: 0px 12px;
+    padding: 0 12px;
 
     &:first-of-type {
         padding-left: 24px;
@@ -28,13 +28,11 @@ const commonStyle = css`
 
 export const Td = styled.td<Omit<T.ICell, 'position'>>`
     ${commonStyle}
-
     width: ${({ width }) => !!width && `${width}%`};
 `;
 
 export const Th = styled.th<Omit<T.ICell, 'position'>>`
     ${commonStyle}
-
     width: ${({ width }) => !!width && `${width}%`};
 `;
 
@@ -43,9 +41,9 @@ export const TitleWrapper = styled.div`
     align-items: center;
     gap: 6px;
 
-    user-select: none;
-
     cursor: ${({ onClick }) => !!onClick && 'pointer'};
+
+    user-select: none;
 `;
 
 export const SortIconWrapper = styled.div`

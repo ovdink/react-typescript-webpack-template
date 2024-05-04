@@ -34,8 +34,9 @@ export const PaginationItem = styled.div<{ isActive: boolean; isPointer: boolean
     min-height: 28px;
     padding: 2px 8px;
 
-    font-weight: ${theme.text.normal.fontWeight};
     font-size: ${theme.text.tiny.fontSize};
+
+    font-weight: ${theme.text.normal.fontWeight};
     line-height: ${theme.text.normal.lineHeight};
 
     color: grey;
@@ -44,9 +45,9 @@ export const PaginationItem = styled.div<{ isActive: boolean; isPointer: boolean
 
     border-radius: ${theme.borderRadiusSecondary};
 
-    cursor: ${({ isPointer }) => isPointer && 'pointer'};
-
     transition: background-color 0.15s ease-in-out;
+
+    cursor: ${({ isPointer }) => isPointer && 'pointer'};
 
     user-select: none;
 
@@ -98,12 +99,12 @@ export const ActiveBackgroung = styled.div<{ left: number; width: number; height
     top: 0;
     left: ${({ left }) => `${left}px`};
 
-    transition: left 0.4s ease-in-out;
-
     width: ${({ width }) => `${width}px`};
     height: ${({ height }) => `${height}px`};
 
+    background-color: ${theme.colors.box24};
+
     border-radius: ${theme.borderRadiusSecondary};
 
-    background-color: ${theme.colors.box24};
+    transition: left 0.4s ease-in-out;
 `;
