@@ -12,7 +12,8 @@
         "lint:eslint": "cross-env ./node_modules/.bin/eslint src/ --ext .ts,.tsx --fix",
         "lint:prettier": "cross-env ./node_modules/.bin/prettier -c --write src",
         "lint:tsc": "cross-env ./node_modules/typescript/bin/tsc",
-        "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier"
+        "lint:style": "cross-env ./node_modules/.bin/stylelint 'src/**/units.ts' --fix",
+        "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier && npm run lint:style"
     },
     "husky": {
         "hooks": {
@@ -70,9 +71,13 @@
         "imagemin-webp": "8.0.0",
         "mini-css-extract-plugin": "2.7.5",
         "path": "0.12.7",
+        "postcss-styled-syntax": "0.6.4",
         "prettier": "2.8.6",
         "react-refresh": "0.14.0",
         "style-loader": "3.3.2",
+        "stylelint": "16.5.0",
+        "stylelint-config-clean-order": "5.4.2",
+        "stylelint-config-standard": "36.0.0",
         "ts-loader": "9.4.2",
         "tsconfig-paths-webpack-plugin": "4.0.1",
         "typescript": "5.4.5",
